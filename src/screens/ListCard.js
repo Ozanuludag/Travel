@@ -1,0 +1,176 @@
+import React, { useState } from "react";
+import { StyleSheet, Text, View, TouchableOpacity, Modal } from "react-native";
+import ModalCard from "./ModalCard";
+
+const ListCard = () => {
+  const [modalVisible, setModalVisible] = useState(false);
+
+  return (
+    <View>
+      <TouchableOpacity
+        onPress={() => setModalVisible(true)}
+        style={{
+          paddingHorizontal: 36,
+          alignSelf: "center",
+          marginTop: 20,
+          backgroundColor: "#FFF",
+          height: 182,
+          elevation: 1,
+          width: 270,
+          borderRadius: 15,
+        }}
+      >
+        <View
+          style={{ flexDirection: "row", paddingTop: 20, alignSelf: "center" }}
+        >
+          <Text
+            style={{
+              color: "#4b3ca7",
+              fontFamily: "RobotoBold",
+              fontSize: 20,
+            }}
+          >
+            NYC
+          </Text>
+          <Text
+            style={{
+              fontSize: 20,
+              color: "#a2a2db",
+              paddingHorizontal: 12,
+            }}
+          >
+            - - - - - - - - - - - - -
+          </Text>
+          <Text
+            style={{
+              color: "#4b3ca7",
+              fontFamily: "RobotoBold",
+              fontSize: 20,
+            }}
+          >
+            IDN
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            marginTop: 5,
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text
+            style={{
+              color: "#a2a2db",
+              fontFamily: "RobotoRegular",
+            }}
+          >
+            New York
+          </Text>
+          <Text
+            style={{
+              color: "#a2a2db",
+              fontFamily: "RobotoRegular",
+            }}
+          >
+            Indonesia
+          </Text>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            marginTop: 10,
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Text
+            style={{
+              color: "#522289",
+              fontFamily: "RobotoRegular",
+              fontSize: 16,
+            }}
+          >
+            09:00 AM
+          </Text>
+          <Text
+            style={{
+              color: "#522289",
+              fontFamily: "RobotoRegular",
+              fontSize: 16,
+            }}
+          >
+            21:00 PM
+          </Text>
+        </View>
+        <Text
+          style={{
+            color: "#a2a2db",
+            fontFamily: "RobotoRegular",
+            fontSize: 12,
+          }}
+        >
+          20 June, 2021
+        </Text>
+        <Text
+          style={{
+            color: "#a2a2db",
+            fontFamily: "RobotoRegular",
+            fontSize: 17,
+            marginRight: -5,
+            marginVertical: 8,
+          }}
+        >
+          {" "}
+          - - - - - - - - - - - - - - - - - - - - - - - - - -
+        </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            marginTop: -8,
+            justifyContent: "space-between",
+          }}
+        >
+          <Text
+            style={{
+              color: "#4b3ca7",
+              fontFamily: "RobotoBold",
+              fontSize: 12,
+              fontSize: 16,
+            }}
+          >
+            Morgan Freeman
+          </Text>
+          <Text
+            style={{
+              color: "#4b3ca7",
+              fontFamily: "RobotoBold",
+              fontSize: 12,
+              fontSize: 16,
+            }}
+          >
+            $400
+          </Text>
+        </View>
+      </TouchableOpacity>
+      <View>
+        <Modal
+          animationType="fade"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            Alert.alert("Modal is Closed");
+          }}
+        >
+          <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+            <ModalCard />
+          </TouchableOpacity>
+        </Modal>
+      </View>
+    </View>
+  );
+};
+
+export default ListCard;
+
+const styles = StyleSheet.create({});
